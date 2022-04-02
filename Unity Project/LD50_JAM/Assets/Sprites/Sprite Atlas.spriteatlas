@@ -48,12 +48,28 @@ SpriteAtlas:
   - {fileID: -1889187533, guid: 5212ef94a6caab946ab451d619cc2f2f, type: 3}
   - {fileID: 1040040284, guid: 5212ef94a6caab946ab451d619cc2f2f, type: 3}
   - {fileID: 21300000, guid: efe4f2e9d628be24a99f0d9c44600ca4, type: 3}
+  - {fileID: -809814171, guid: 7957659b83c4975408eff77d82c05386, type: 3}
+  - {fileID: -1354565839, guid: 7957659b83c4975408eff77d82c05386, type: 3}
   - {fileID: 653852016, guid: 7957659b83c4975408eff77d82c05386, type: 3}
   - {fileID: -625871482, guid: 7957659b83c4975408eff77d82c05386, type: 3}
   - {fileID: 607196075, guid: 7957659b83c4975408eff77d82c05386, type: 3}
   - {fileID: -1888213782, guid: 7957659b83c4975408eff77d82c05386, type: 3}
+  - {fileID: 923783710, guid: 7957659b83c4975408eff77d82c05386, type: 3}
+  - {fileID: -1777203740, guid: 7957659b83c4975408eff77d82c05386, type: 3}
   - {fileID: -152590396, guid: 7957659b83c4975408eff77d82c05386, type: 3}
   - {fileID: 1531486280, guid: 7957659b83c4975408eff77d82c05386, type: 3}
+  - {fileID: 2079103287, guid: 15b7538dfe73a654d8f6363867ae1a9a, type: 3}
+  - {fileID: 1585305050, guid: 15b7538dfe73a654d8f6363867ae1a9a, type: 3}
+  - {fileID: 906829419, guid: 15b7538dfe73a654d8f6363867ae1a9a, type: 3}
+  - {fileID: -1614504753, guid: 15b7538dfe73a654d8f6363867ae1a9a, type: 3}
+  - {fileID: 106277854, guid: 15b7538dfe73a654d8f6363867ae1a9a, type: 3}
+  - {fileID: 334519411, guid: 15b7538dfe73a654d8f6363867ae1a9a, type: 3}
+  - {fileID: -1729544601, guid: 15b7538dfe73a654d8f6363867ae1a9a, type: 3}
+  - {fileID: 819840164, guid: 15b7538dfe73a654d8f6363867ae1a9a, type: 3}
+  - {fileID: 1861450183, guid: b4f1ca7ff978da84d8af561cbee25191, type: 3}
+  - {fileID: -1057824863, guid: b4f1ca7ff978da84d8af561cbee25191, type: 3}
+  - {fileID: 839795496, guid: b4f1ca7ff978da84d8af561cbee25191, type: 3}
+  - {fileID: 1464473091, guid: b4f1ca7ff978da84d8af561cbee25191, type: 3}
   m_PackedSpriteNamesToIndex:
   - tileset_0
   - tileset_1
@@ -65,12 +81,28 @@ SpriteAtlas:
   - tileset_7
   - tileset_8
   - player_placeholder
+  - props_8
+  - props_9
   - props_2
   - props_3
   - props_0
   - props_1
+  - props_6
+  - props_7
   - props_4
   - props_5
+  - player_5
+  - player_4
+  - player_7
+  - player_6
+  - player_1
+  - player_0
+  - player_3
+  - player_2
+  - ilness_icons_3
+  - ilness_icons_2
+  - ilness_icons_1
+  - ilness_icons_0
   m_RenderDataMap: {}
   m_Tag: Sprite Atlas
   m_IsVariant: 0
