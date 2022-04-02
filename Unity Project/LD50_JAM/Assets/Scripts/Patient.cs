@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class Patient : MonoBehaviour
+public class Patient : MonoBehaviour, IInteractable
 {
     public bool IsCured => Illnesses.Count == 0;
     public bool HasPatient = false;
@@ -59,6 +59,11 @@ public class Patient : MonoBehaviour
 
     public void AttemptCure(CureType cure)
     {
+        if(cure == CureType.NONE)
+        {
+            return;
+        }
+
         Illness curedIllness = IllnessCuredByCure(cure);
 
         if (curedIllness != null)
@@ -70,5 +75,10 @@ public class Patient : MonoBehaviour
         {
             OnCureFailure?.Invoke(this, Illnesses.ToArray(), cure);
         }
+    }
+
+    public void Interact(PlayerInputHandler player)
+    {
+        AttemptCure(player.GetHeldCure());
     }
 }

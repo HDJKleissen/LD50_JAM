@@ -10,7 +10,7 @@ public class BedPopupGroup : MonoBehaviour
     public List<LerpToPosition> Popups = new List<LerpToPosition>();
     Dictionary<Illness, BedPopup> IllnessPopupDict = new Dictionary<Illness, BedPopup>();
 
-    public float PopupGroupYOffset;
+    public float PopupGroupYOffset, PopupGroupMaxY;
     public float PopupOffset;
 
     // Start is called before the first frame update
@@ -40,19 +40,38 @@ public class BedPopupGroup : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = Camera.main.WorldToScreenPoint(patient.transform.position);
+        Vector3 newPosition = Camera.main.WorldToScreenPoint(patient.transform.position);
+        bool stackVertical = false;
+
+        newPosition = new Vector3(newPosition.x, Mathf.Clamp(newPosition.y, 0, PopupGroupMaxY));
 
         int popupAmount = Popups.Count;
 
-        for(int i = 0; i < popupAmount; i++)
+        if (newPosition.x < 0 || newPosition.x > Screen.width)
         {
-            Popups[i].Destination = new Vector3((i - ((float)popupAmount / 2)) * PopupOffset, PopupGroupYOffset, 0);
+            stackVertical = true;
+            newPosition = new Vector3(Mathf.Clamp(newPosition.x, 0, Screen.width), Mathf.Clamp(newPosition.y, 0, PopupGroupMaxY - ((float)popupAmount / 2) * PopupOffset), newPosition.z);
+        }
+
+        transform.position = newPosition;
+
+        for (int i = 0; i < popupAmount; i++)
+        {
+            if (stackVertical)
+            {
+                Popups[i].Destination = new Vector3(0,(i - ((float)popupAmount / 2)) * PopupOffset + PopupGroupYOffset, 0);
+            }
+            else
+            {
+                Popups[i].Destination = new Vector3((i - ((float)popupAmount / 2)) * PopupOffset, PopupGroupYOffset, 0);
+            }
         }
     }
 
     public void AddPopup(Illness illness)
     {
         BedPopup newPopup = Instantiate(BedPopupPrefab, transform).GetComponent<BedPopup>();
+        newPopup.GetComponent<SpriteRenderer>().sprite = illness.PopupSprite;
         IllnessPopupDict.Add(illness, newPopup);
         Popups.Add(newPopup.GetComponent<LerpToPosition>());
     }

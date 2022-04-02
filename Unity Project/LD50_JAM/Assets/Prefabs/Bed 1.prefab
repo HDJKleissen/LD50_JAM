@@ -120,8 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   HasPatient: 0
-  Illnesses:
-  - {fileID: 11400000, guid: a3d144c3cb2ae344a980416bed5ac5a7, type: 2}
+  Illnesses: []
   patientCollider: {fileID: 4902536969339103168}
 --- !u!60 &4902536969339103168
 PolygonCollider2D:
@@ -148,7 +147,7 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.8125, y: 0.53125}
+    - - {x: -0.8125, y: 0.28125}
       - {x: -0.8125, y: -0.53125}
       - {x: 0.8125, y: -0.53125}
-      - {x: 0.8125, y: 0.53125}
+      - {x: 0.8125, y: 0.28125}

@@ -110,7 +110,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.625, y: 0.2}
+  m_Size: {x: 0.4, y: 0.17}
   m_EdgeRadius: 0
 --- !u!95 &331817079759648394
 Animator:
@@ -219,6 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMovement: {fileID: 331817079965967670}
   playerCure: {fileID: 821693332}
+  closestInteractable: {fileID: 0}
 --- !u!114 &331817079965967668
 MonoBehaviour:
   m_ObjectHideFlags: 0

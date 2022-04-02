@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class LerpToPosition : MonoBehaviour
 {
-    public bool Local;
+    public bool Local, DestroyAtDestination;
 
     [SerializeField] UpdateMoment updateMoment;
     public Vector3 Destination;
-    public float LerpSpeed, SnapDistance;
+    public float LerpSpeed;
 
     // Start is called before the first frame update
     void Start()

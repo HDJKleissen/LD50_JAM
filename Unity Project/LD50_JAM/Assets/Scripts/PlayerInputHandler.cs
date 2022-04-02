@@ -9,14 +9,15 @@ public class PlayerInputHandler : MonoBehaviour
     [SerializeField] PlayerCure playerCure;
 
     public event Action OnPlayerInteract;
+
     public event Action<Vector2> OnPlayerMove;
 
-    [SerializeField] Patient closestPatient;
-    
+    [SerializeField] Transform closestInteractable;
+
     // Start is called before the first frame update
     void Start()
     {
-        if(playerMovement == null)
+        if (playerMovement == null)
         {
             playerMovement = GetComponent<PlayerMovement>();
         }
@@ -26,28 +27,40 @@ public class PlayerInputHandler : MonoBehaviour
     {
         if (Input.GetButtonUp("Interact"))
         {
-            if(closestPatient != null && playerCure.GetHeldCure() != CureType.NONE)
+            if (closestInteractable != null)
             {
-                closestPatient.AttemptCure(playerCure.GetHeldCure());
+                closestInteractable.GetComponent<IInteractable>().Interact(this);
                 OnPlayerInteract?.Invoke();
             }
         }
     }
 
+    public void SetHeldCure(CureType cure)
+    {
+        playerCure.SetHeldCure(cure);
+    }
+
+    public CureType GetHeldCure()
+    {
+        return playerCure.GetHeldCure();
+    }
+
     private void OnTriggerStay2D(Collider2D collision)
     {
-        Patient patient = collision.GetComponent<Patient>();
-        if (patient != null)
+        IInteractable interactable = collision.GetComponent<IInteractable>();
+        if (interactable != null)
         {
-            if (closestPatient == null)
+            Transform interactableTransform = collision.GetComponent<Transform>();
+
+            if (closestInteractable == null)
             {
-                closestPatient = patient;
+                closestInteractable = interactableTransform;
             }
-            else if (patient != closestPatient)
+            else if (interactableTransform != closestInteractable)
             {
-                if(Vector3.Distance(transform.position, patient.transform.position) < Vector3.Distance(transform.position, closestPatient.transform.position))
+                if (Vector3.Distance(transform.position, interactableTransform.position) < Vector3.Distance(transform.position, closestInteractable.transform.position))
                 {
-                    closestPatient = patient;
+                    closestInteractable = interactableTransform;
                 }
             }
         }
@@ -56,9 +69,9 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.GetComponent<Patient>() != null)
+        if (collision.GetComponent<Patient>() != null)
         {
-            closestPatient = null;
+            closestInteractable = null;
         }
     }
 
