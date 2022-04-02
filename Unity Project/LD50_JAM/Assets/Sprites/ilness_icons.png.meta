@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7957659b83c4975408eff77d82c05386
+guid: b4f1ca7ff978da84d8af561cbee25191
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -140,33 +140,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: props_0
+      name: ilness_icons_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 67
-        width: 10
-        height: 29
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c2d332aeb59fbd84295a82cae3e0bba2
-      internalID: 607196075
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: props_1
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 79
-        width: 26
+        y: 0
+        width: 14
         height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -175,82 +154,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1ad5d231c8fef2148be0e070bf54065f
-      internalID: -1888213782
+      spriteID: 7be86206efdafd74e8f18995033a3397
+      internalID: 1464473091
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: props_2
+      name: ilness_icons_1
       rect:
         serializedVersion: 2
-        x: 39
-        y: 72
-        width: 12
-        height: 22
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 29134db26480f3041ba604ea9d6aa1c6
-      internalID: 653852016
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: props_3
-      rect:
-        serializedVersion: 2
-        x: 53
-        y: 66
-        width: 15
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dbe021406241fb44fb9a775ba1e05576
-      internalID: -625871482
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: props_4
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 66
-        width: 15
-        height: 30
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 022e7cfd3578f7b4981d2a512059dfbb
-      internalID: -152590396
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: props_5
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 61
-        width: 26
+        x: 14
+        y: 0
+        width: 14
         height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -259,20 +175,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5a44d4ef78f33c41841760c0201da84
-      internalID: 1531486280
+      spriteID: 72367c99b55ba5e43a6daf87f8a634a5
+      internalID: 839795496
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: props_6
+      name: ilness_icons_2
       rect:
         serializedVersion: 2
-        x: 50
-        y: 50
-        width: 22
-        height: 15
+        x: 28
+        y: 0
+        width: 14
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8fa72be92adf131468bf8deaafcf7568
-      internalID: 923783710
+      spriteID: 4b4b7c642ff58b64880249e4ff7aa8e0
+      internalID: -1057824863
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: props_7
+      name: ilness_icons_3
       rect:
         serializedVersion: 2
-        x: 0
-        y: 42
-        width: 28
-        height: 18
+        x: 42
+        y: 0
+        width: 14
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -301,29 +217,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 956333fc1f3ffb14b8e7fe2174846602
-      internalID: -1777203740
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: props_8
-      rect:
-        serializedVersion: 2
-        x: 29
-        y: 52
-        width: 21
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8a256382770a3864aa80f1250e235340
-      internalID: -809814171
+      spriteID: f7f1c3ad7aa7bc04195321976994fb53
+      internalID: 1861450183
       vertices: []
       indices: 
       edges: []
@@ -331,7 +226,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ade030aa419a48648b0c1dc1247e650f
+    spriteID: 3ce200c3df7949942bf0be81aaf89a58
     internalID: 0
     vertices: []
     indices: 
@@ -339,15 +234,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      props_6: 923783710
-      props_4: -152590396
-      props_8: -809814171
-      props_1: -1888213782
-      props_5: 1531486280
-      props_2: 653852016
-      props_0: 607196075
-      props_7: -1777203740
-      props_3: -625871482
+      ilness_icons_1: 839795496
+      ilness_icons_0: 1464473091
+      ilness_icons_2: -1057824863
+      ilness_icons_3: 1861450183
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
