@@ -6,55 +6,69 @@ using TMPro;
 
 public class Patient : MonoBehaviour
 {
-    public bool IsCured = false;
+    public bool IsCured => Illnesses.Count == 0;
+    public bool HasPatient = false;
 
     // TODO: Change to list
-    public Illness Illness;
+    public List<Illness> Illnesses;
     public Collider2D patientCollider;
-    public TextMeshProUGUI CuredByText, IsCuredText;
 
-    // TODO: Replace this "local" variable with getting the playercure class from the player object that is interacting with this
-    public PlayerCure playerCure;
-
-    public static event Action<Patient, CureType> OnCureAttempt;
+    public static event Action<Patient, Illness, CureType> OnCureSuccess;
+    public static event Action<Patient, Illness[], CureType> OnCureFailure;
+    public static event Action<Patient, Illness> OnIllnessCreate;
 
     // Start is called before the first frame update
     void Start()
     {
-        if (playerCure == null)
-        {
-            playerCure = FindObjectOfType<PlayerCure>();
-        }
         if (patientCollider == null)
         {
             patientCollider = GetComponent<Collider2D>();
         }
-        CuredByText.SetText(Illness.IllnessName);
-    }
-    private void OnMouseUpAsButton()
-    {
-        if (playerCure.HoldingCure)
-        {
-            Cure(playerCure.GetHeldCure());
-            playerCure.SetHeldCure(CureType.NONE);
-            IsCuredText.SetText(IsCured ? "Cured!" : "Not Cured!");
-        }
-    }
-    public bool CureIsSuccessful(CureType cureType)
-    {
-        if (Illness == null)
-        {
-            return false; 
-        }
-        return Illness.CuredBy == cureType;
     }
 
-    public void Cure(CureType cure)
+    private void Update()
     {
-        if (CureIsSuccessful(cure))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            IsCured = true;
+            CreateIllness(new Illness()
+            {
+                IllnessName = "TEST ILLNESS",
+                CuredBy = CureType.CRASH_CART
+            });
         }
-        OnCureAttempt?.Invoke(this, cure);
+    }
+
+    void CreateIllness(Illness illness)
+    {
+        Illnesses.Add(illness);
+        OnIllnessCreate?.Invoke(this, illness);
+    }
+
+    public Illness IllnessCuredByCure(CureType cureType)
+    {
+        for(int i = Illnesses.Count - 1; i >= 0; i--)
+        {
+            if(Illnesses[i].CuredBy == cureType)
+            {
+                return Illnesses[i];
+            }
+        }
+
+        return null;   
+    }
+
+    public void AttemptCure(CureType cure)
+    {
+        Illness curedIllness = IllnessCuredByCure(cure);
+
+        if (curedIllness != null)
+        {
+            Illnesses.Remove(curedIllness);
+            OnCureSuccess?.Invoke(this, curedIllness, cure);
+        }
+        else
+        {
+            OnCureFailure?.Invoke(this, Illnesses.ToArray(), cure);
+        }
     }
 }

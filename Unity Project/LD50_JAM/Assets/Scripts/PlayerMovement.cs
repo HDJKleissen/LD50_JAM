@@ -5,11 +5,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float MoveSpeed;
-
-
     [SerializeField] Rigidbody2D rb2d;
 
+    [SerializeField] float MoveSpeed;    
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
             rb2d = GetComponent<Rigidbody2D>();
         }
     }
+
 
     public void Move(Vector2 movement)
     {

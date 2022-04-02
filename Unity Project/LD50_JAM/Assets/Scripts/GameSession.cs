@@ -8,7 +8,7 @@ public class GameSession : MonoBehaviour
 
     float _gameTimer = 0;
 
-    List<(Patient, CureType)> cureAttempts = new List<(Patient, CureType)>();
+    [SerializeField] List<(Illness[], CureType, bool)> cureAttempts = new List<(Illness[], CureType, bool)>();
 
     int cureSuccesses = 0;
     int cureFailures = 0;
@@ -19,27 +19,29 @@ public class GameSession : MonoBehaviour
 
     public void Awake()
     {
-        Patient.OnCureAttempt += RegisterCureAttempt;
+        Patient.OnCureSuccess += RegisterCureSuccess;
+        Patient.OnCureFailure += RegisterCureFailure;
     }
 
     public void OnDestroy()
     {
-        Patient.OnCureAttempt -= RegisterCureAttempt;
+        Patient.OnCureSuccess -= RegisterCureSuccess;
+        Patient.OnCureFailure += RegisterCureFailure;
     }
 
-    void RegisterCureAttempt(Patient patient, CureType cureType)
+    void RegisterCureSuccess(Patient patient, Illness illness, CureType cureType)
     {
-        cureAttempts.Add((patient, cureType));
-        if(patient.CureIsSuccessful(cureType))
-        {
-            cureSuccesses++;
-            OnCureSuccessesChange?.Invoke(cureSuccesses);
-        }
-        else
-        {
-            cureFailures++;
-            OnCureFailuresChange?.Invoke(cureFailures);
-        }
+        cureAttempts.Add((new Illness[] { illness }, cureType, true));
+        cureSuccesses++;
+        OnCureSuccessesChange?.Invoke(cureSuccesses);
+    }
+
+    void RegisterCureFailure(Patient patient, Illness[] illnesses, CureType cureType)
+    {
+        cureAttempts.Add((illnesses, cureType, false));
+        cureFailures++;
+        OnCureFailuresChange?.Invoke(cureFailures);
+
     }
 
     public void Update()
@@ -48,4 +50,3 @@ public class GameSession : MonoBehaviour
         OnTimerChange?.Invoke(_gameTimer);
     }
 }
-
