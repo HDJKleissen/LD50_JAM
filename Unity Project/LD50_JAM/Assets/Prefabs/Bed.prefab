@@ -230,7 +230,6 @@ GameObject:
   - component: {fileID: 2643817305120507842}
   - component: {fileID: 2643817305120507841}
   - component: {fileID: 6064859268401193875}
-  - component: {fileID: 7538833029119421285}
   - component: {fileID: 1163323176640268463}
   m_Layer: 0
   m_Name: Bed
@@ -321,25 +320,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9301f6d9fa04a9042b735b17e2c2103d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Illness: {fileID: 7538833029119421285}
+  IsCured: 0
+  Illness: {fileID: 0}
   patientCollider: {fileID: 1163323176640268463}
   CuredByText: {fileID: 3658487474179358067}
   IsCuredText: {fileID: 5864487250524286444}
   playerCure: {fileID: 0}
---- !u!114 &7538833029119421285
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2643817305120507840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29d451161e00c1e479a622167c56a5bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsCured: 0
-  CuredBy: 1
 --- !u!61 &1163323176640268463
 BoxCollider2D:
   m_ObjectHideFlags: 0
