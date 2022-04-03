@@ -5,7 +5,7 @@
 			<value>Ambience</value>
 		</property>
 		<property name="outputFormat">
-			<value>5</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{61c75d34-abc8-4017-bb7b-9f2596cc91fc}</destination>
@@ -54,7 +54,7 @@
 			<destination>{1dfc6893-d8e6-494a-9c1c-a35ff90b32ac}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{5220509d-b159-4d49-be7d-ef3faae8f051}</destination>
+			<destination>{6917f854-ef28-4c98-a676-11f95997a851}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{5e3b5d03-4155-4384-a07e-443f08b860a8}" />
@@ -130,6 +130,9 @@
 		<property name="length">
 			<value>7.7419374999999997</value>
 		</property>
+		<property name="volume">
+			<value>-28.5</value>
+		</property>
 		<property name="polyphony">
 			<value>3</value>
 		</property>
@@ -137,16 +140,16 @@
 			<value>1000</value>
 		</property>
 		<property name="maximumTimeBetweenSounds">
-			<value>4000</value>
+			<value>6000</value>
 		</property>
 		<property name="spawnRate">
 			<value>26</value>
 		</property>
 		<property name="minimumScatterDistance">
-			<value>30</value>
+			<value>0</value>
 		</property>
 		<property name="maximumScatterDistance">
-			<value>50</value>
+			<value>2</value>
 		</property>
 		<property name="pitchRandomization">
 			<value>1</value>
@@ -188,7 +191,11 @@
 			<destination>{e717aac4-ba69-46c6-aea1-1960b2dbb7d8}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{85895891-e0a8-472c-ac40-0399a4855dd5}" />
+	<object class="MixerBusPanner" id="{85895891-e0a8-472c-ac40-0399a4855dd5}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{5e6136b9-25a4-4fcf-b272-0e8422057454}" />
 	<object class="MixerBusEffectChain" id="{4f59bf7c-d7e7-437c-8090-9ee1dbe7b15e}">
 		<relationship name="effects">

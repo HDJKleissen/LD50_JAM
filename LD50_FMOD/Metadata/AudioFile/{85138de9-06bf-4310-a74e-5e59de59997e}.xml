@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{85138de9-06bf-4310-a74e-5e59de59997e}">
+		<property name="assetPath">
+			<value>Patient wrong cure VO 05.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.875</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{740695d0-58d2-4890-a944-09a5456d4f37}</destination>
+		</relationship>
+	</object>
+</objects>
