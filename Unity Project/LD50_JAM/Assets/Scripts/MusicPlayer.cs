@@ -6,7 +6,7 @@ public class MusicPlayer : UnitySingleton<MusicPlayer>
 {
     FMOD.Studio.EventInstance Music;
 
-    public bool Menu, Panic;
+    public bool Menu, Panic, Lose;
 
     void Start()
     {
@@ -17,6 +17,7 @@ public class MusicPlayer : UnitySingleton<MusicPlayer>
             Music.release();
             DontDestroyOnLoad(this);
             SetPanic(Panic);
+            SetLose(Lose);
             SetMenu(true);
         }
     }
@@ -25,6 +26,7 @@ public class MusicPlayer : UnitySingleton<MusicPlayer>
     {
         SetPanic(Panic);
         SetMenu(Menu);
+        SetLose(Lose);
     }
 
     public void SetPanic(bool value)
@@ -37,6 +39,12 @@ public class MusicPlayer : UnitySingleton<MusicPlayer>
     {
         Music.setParameterByName("Menu", value ? 1f : 0f, false);
         Menu = value;
+    }
+
+    public void SetLose(bool value)
+    {
+        Music.setParameterByName("Lose", value ? 1f : 0f, false);
+        Lose = value;
     }
 
     private void OnDestroy()
