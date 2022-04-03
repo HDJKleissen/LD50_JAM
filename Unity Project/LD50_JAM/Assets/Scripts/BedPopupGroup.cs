@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BedPopupGroup : MonoBehaviour
 {
@@ -16,9 +17,13 @@ public class BedPopupGroup : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Popups = new List<LerpToPosition>(GetComponentsInChildren<LerpToPosition>());
         Patient.OnIllnessCreate += CreateIllnessPopup;
         Patient.OnCureSuccess += RemoveIllnessPopup;
+    }
+    void OnDestroy()
+    {
+        Patient.OnIllnessCreate -= CreateIllnessPopup;
+        Patient.OnCureSuccess -= RemoveIllnessPopup;
     }
     void CreateIllnessPopup(Patient creatingPatient, Illness illness)
     {
@@ -43,14 +48,18 @@ public class BedPopupGroup : MonoBehaviour
         Vector3 newPosition = Camera.main.WorldToScreenPoint(patient.transform.position);
         bool stackVertical = false;
 
-        newPosition = new Vector3(newPosition.x, Mathf.Clamp(newPosition.y, 0, PopupGroupMaxY));
+        //newPosition = new Vector3(newPosition.x, Mathf.Clamp(newPosition.y, 0, PopupGroupMaxY));
 
         int popupAmount = Popups.Count;
 
         if (newPosition.x < 0 || newPosition.x > Screen.width)
         {
             stackVertical = true;
-            newPosition = new Vector3(Mathf.Clamp(newPosition.x, 0, Screen.width), Mathf.Clamp(newPosition.y, 0, PopupGroupMaxY - ((float)popupAmount / 2) * PopupOffset), newPosition.z);
+            newPosition = new Vector3(
+                Mathf.Clamp(newPosition.x, 0, Screen.width),
+                newPosition.y, //Mathf.Clamp(newPosition.y, 0, PopupGroupMaxY - ((float)popupAmount / 2) * PopupOffset),
+                newPosition.z
+            );
         }
 
         transform.position = newPosition;
@@ -71,7 +80,7 @@ public class BedPopupGroup : MonoBehaviour
     public void AddPopup(Illness illness)
     {
         BedPopup newPopup = Instantiate(BedPopupPrefab, transform).GetComponent<BedPopup>();
-        newPopup.GetComponent<SpriteRenderer>().sprite = illness.PopupSprite;
+        newPopup.GetComponent<Image>().sprite = illness.PopupSprite;
         IllnessPopupDict.Add(illness, newPopup);
         Popups.Add(newPopup.GetComponent<LerpToPosition>());
     }

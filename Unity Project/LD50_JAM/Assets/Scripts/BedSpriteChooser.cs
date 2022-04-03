@@ -55,6 +55,7 @@ public class BedSpriteChooser : MonoBehaviour
 
     private void OnValidate()
     {
+        HasPatient = GetComponent<Patient>().HasPatient;
         UpdateSprite(HasPatient);
     }
 

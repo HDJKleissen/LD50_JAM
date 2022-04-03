@@ -28,17 +28,9 @@ public class Patient : MonoBehaviour, IInteractable
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            CreateIllness(new Illness()
-            {
-                IllnessName = "TEST ILLNESS",
-                CuredBy = CureType.CRASH_CART
-            });
-        }
     }
 
-    void CreateIllness(Illness illness)
+    public void CreateIllness(Illness illness)
     {
         Illnesses.Add(illness);
         OnIllnessCreate?.Invoke(this, illness);

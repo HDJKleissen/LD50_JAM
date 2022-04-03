@@ -6,7 +6,7 @@ public class MusicPlayer : UnitySingleton<MusicPlayer>
 {
     FMOD.Studio.EventInstance Music;
 
-    public bool Menu , Panic;
+    public bool Menu, Panic;
 
     void Start()
     {
