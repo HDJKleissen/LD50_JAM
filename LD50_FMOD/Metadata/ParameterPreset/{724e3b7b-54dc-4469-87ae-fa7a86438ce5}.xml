@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{724e3b7b-54dc-4469-87ae-fa7a86438ce5}">
+		<property name="name">
+			<value>Dying</value>
+		</property>
+		<relationship name="folder">
+			<destination>{71ca17ef-1007-41b8-bcd7-88bcae7601a8}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{3268ff64-d8c0-4976-bdef-9f1cadc872f7}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{3268ff64-d8c0-4976-bdef-9f1cadc872f7}">
+		<property name="parameterType">
+			<value>1</value>
+		</property>
+		<property name="maximum">
+			<value>2</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
