@@ -134,19 +134,19 @@
 			<value>3</value>
 		</property>
 		<property name="minimumTimeBetweenSounds">
-			<value>2500</value>
+			<value>1000</value>
 		</property>
 		<property name="maximumTimeBetweenSounds">
-			<value>7000</value>
+			<value>4000</value>
 		</property>
 		<property name="spawnRate">
 			<value>26</value>
 		</property>
 		<property name="minimumScatterDistance">
-			<value>40</value>
+			<value>30</value>
 		</property>
 		<property name="maximumScatterDistance">
-			<value>60</value>
+			<value>50</value>
 		</property>
 		<property name="pitchRandomization">
 			<value>1</value>
@@ -257,11 +257,17 @@
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{99ad2e8e-bd94-4db5-9828-cbc5e74f0182}">
+		<property name="volume">
+			<value>-2.5</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{f3a59ae5-6fe2-4194-860a-8d1d1f87462c}</destination>
 		</relationship>
 	</object>
 	<object class="SingleSound" id="{b7b4c7a9-9b94-4f71-a1d1-76c4911dbcee}">
+		<property name="volume">
+			<value>-3</value>
+		</property>
 		<relationship name="audioFile">
 			<destination>{f3018b32-34b0-4f8c-bc23-121cbbf718d5}</destination>
 		</relationship>
