@@ -53,7 +53,7 @@
 			<destination>{992156fe-55c7-41b0-aa0a-f3a45183d95f}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{5220509d-b159-4d49-be7d-ef3faae8f051}</destination>
+			<destination>{6917f854-ef28-4c98-a676-11f95997a851}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{70a1b7f6-03bb-43e9-9d7b-8f14e3d1f710}" />
@@ -72,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{cc10ac8a-9660-4fe6-b732-748665600fec}">
+		<property name="volume">
+			<value>-3</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{ec2dd802-66ca-4837-b1d1-4c4b9213e91c}</destination>
 		</relationship>
@@ -136,6 +139,13 @@
 	</object>
 	<object class="MixerBusPanner" id="{8ac03923-915b-409e-9c59-50e23cf90b01}" />
 	<object class="MixerBusFader" id="{e42a9d7b-d19e-4577-81da-1d221b6c4ed4}" />
-	<object class="SpatialiserEffect" id="{873b0aa9-abaf-469d-b7a5-2fd83b3a374b}" />
+	<object class="SpatialiserEffect" id="{873b0aa9-abaf-469d-b7a5-2fd83b3a374b}">
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>3</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{54343513-f822-4b6e-8ab6-ad427839b50e}" />
 </objects>

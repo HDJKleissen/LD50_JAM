@@ -9,6 +9,7 @@ public class CureDispenser : MonoBehaviour, IInteractable
     public void Interact(PlayerInputHandler player)
     {
         player.SetHeldCure(CureDispensed);
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Pickup", gameObject);
     }
 
     // Start is called before the first frame update

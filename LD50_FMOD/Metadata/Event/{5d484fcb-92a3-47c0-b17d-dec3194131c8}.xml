@@ -5,7 +5,7 @@
 			<value>EKG</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{61c75d34-abc8-4017-bb7b-9f2596cc91fc}</destination>
@@ -58,7 +58,7 @@
 			<destination>{13a93cdb-864e-46b4-8d04-f2956ee60e93}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{5220509d-b159-4d49-be7d-ef3faae8f051}</destination>
+			<destination>{6917f854-ef28-4c98-a676-11f95997a851}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{4a2028a8-66c5-4d5a-b078-2caa96e019fe}" />
@@ -170,6 +170,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{886340ab-6232-414f-a600-8b5ecc2d7e0c}">
+		<property name="volume">
+			<value>-14</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{44c6bc08-f231-496b-91ed-d2319386dbae}</destination>
 		</relationship>
@@ -889,7 +892,11 @@
 			<destination>{2b01772b-efc9-4d2a-8d31-93eaa7e60d91}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{529de577-2a17-4cfc-a10d-f96c2464e062}" />
+	<object class="MixerBusPanner" id="{529de577-2a17-4cfc-a10d-f96c2464e062}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{8eee7682-9431-44f8-ad1a-7acbf3a0081c}" />
 	<object class="RandomizerModulator" id="{8a48a8af-b4d7-43b2-89e7-02d0007295ca}">
 		<property name="nameOfPropertyBeingModulated">
@@ -980,7 +987,23 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{dab145a0-68a2-44c9-b911-d6728f7d700e}" />
-	<object class="SpatialiserEffect" id="{2b01772b-efc9-4d2a-8d31-93eaa7e60d91}" />
+	<object class="SpatialiserEffect" id="{2b01772b-efc9-4d2a-8d31-93eaa7e60d91}">
+		<property name="maximumDistance">
+			<value>25</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>2.79999995</value>
+		</property>
+		<property name="minimumExtent">
+			<value>84</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{dac34921-52e5-4555-8e1d-406227c7b14e}">
 		<property name="position">
 			<value>17.004898752306254</value>

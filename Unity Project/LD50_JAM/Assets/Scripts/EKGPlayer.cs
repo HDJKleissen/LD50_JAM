@@ -14,13 +14,19 @@ public class EKGPlayer : MonoBehaviour
         Patient = gameObject.GetComponent<Patient>();
         if (Patient.HasPatient)
         {
-            EKG = FMODUnity.RuntimeManager.CreateInstance("event:/EKG");
-            FMODUnity.RuntimeManager.AttachInstanceToGameObject(EKG, transform);
-            EKG.start();
-            EKG.release();
-            SetDead(Dead);
-            SetDying(Dying);
+            //Invoke("StartPlayingSound", Random.Range(0f, 0.5f)); Could use this to avoid all bein in sync, but not sure if that's better
+            StartPlayingSound();
         }
+    }
+
+    private void StartPlayingSound()
+    {
+        EKG = FMODUnity.RuntimeManager.CreateInstance("event:/EKG");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(EKG, transform);
+        EKG.start();
+        EKG.release();
+        SetDead(Dead);
+        SetDying(Dying);
     }
 
     private void Update()
