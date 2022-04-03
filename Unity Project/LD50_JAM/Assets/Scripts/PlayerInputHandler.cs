@@ -38,6 +38,7 @@ public class PlayerInputHandler : MonoBehaviour
     public void SetHeldCure(CureType cure)
     {
         playerCure.SetHeldCure(cure);
+        //FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Pickup", gameObject);
     }
 
     public CureType GetHeldCure()
