@@ -16,7 +16,7 @@ public class EKGPlayer : MonoBehaviour
         Patient = gameObject.GetComponent<Patient>();
         //Invoke("StartPlayingSound", Random.Range(0f, 0.5f)); Could use this to avoid all bein in sync, but not sure if that's better
         StartPlayingSound();
-        SetEKGSoundPaused(Patient.HasPatient);
+        SetEKGSoundPaused(!Patient.HasPatient);
         Patient.OnPatientDeath += PlayDeathSound;
         BedGenerator.OnPatientCompletelyCured += ResetEKG;
     }
@@ -44,7 +44,7 @@ public class EKGPlayer : MonoBehaviour
     IEnumerator PauseAfterDeath()
     {
         yield return new WaitForSeconds(0.3f);
-        SetEKGSoundPaused(false);
+        SetEKGSoundPaused(true);
         SetDying(false);
         SetDead(false);
     }
@@ -57,7 +57,6 @@ public class EKGPlayer : MonoBehaviour
         EKG.release();
         SetDead(Dead);
         SetDying(Dying);
-        SetEKGSoundPaused(Patient.HasPatient);
     }
 
     void SetEKGSoundPaused(bool paused)
