@@ -38,6 +38,18 @@ public class SFXPlayer : MonoBehaviour
 
     private void PlayOnCureSuccess(Patient patient, Illness illness, CureType cureType)
     {
+        switch (cureType)
+        {
+            case CureType.SYRINGE:
+                FMODUnity.RuntimeManager.PlayOneShotAttached("event:/CureSyringe", patient.gameObject);
+                break;
+            case CureType.CRASH_CART:
+                FMODUnity.RuntimeManager.PlayOneShotAttached("event:/CureCrashCart", patient.gameObject);
+                break;
+            case CureType.BANDAGES:
+                FMODUnity.RuntimeManager.PlayOneShotAttached("event:/CureBandages", patient.gameObject);
+                break;
+        }
         // @Pat:  Play Cure Success sound, can use patient.transform for a location, switch on cureType for different cure sounds
     }
 
