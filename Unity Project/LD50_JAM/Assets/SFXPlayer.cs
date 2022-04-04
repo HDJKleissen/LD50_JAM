@@ -24,6 +24,7 @@ public class SFXPlayer : MonoBehaviour
     private void PlayOnPatientsFullyCured(Patient patient)
     {
         // @Pat:  Play Patient fully cured (aka patient leaves bed without dying) sound, can use patient.transform for a location
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/PatientCured", patient.gameObject);
     }
 
     private void PlayOnPatientDeath(Patient patient)

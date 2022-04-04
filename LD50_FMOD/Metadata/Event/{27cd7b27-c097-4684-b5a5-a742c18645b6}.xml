@@ -73,7 +73,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{b2aac426-6d9c-44a0-bd72-e203601a5b6e}">
 		<property name="volume">
-			<value>-12</value>
+			<value>-17.5</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{a3ba4d43-22f3-4432-8bdb-5f6bedc0f15c}</destination>
@@ -123,8 +123,7 @@
 	<object class="MixerBusEffectChain" id="{a3ba4d43-22f3-4432-8bdb-5f6bedc0f15c}">
 		<relationship name="effects">
 			<destination>{48501854-eb2d-48e3-a438-4e375127b21f}</destination>
-			<destination>{988e36e7-13b5-438f-b596-f6983bf7c39f}</destination>
-			<destination>{52ac29c1-6ff0-4560-bdf2-efb62ab4e898}</destination>
+			<destination>{73e778d2-36bb-4ece-a011-b128875a9dc5}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d742a887-5665-4f7b-8bf6-597dac631377}" />
@@ -175,9 +174,9 @@
 	</object>
 	<object class="MixerBusPanner" id="{227a3728-f107-4664-ad30-9942a25483f5}" />
 	<object class="MixerBusFader" id="{48501854-eb2d-48e3-a438-4e375127b21f}" />
-	<object class="SpatialiserEffect" id="{988e36e7-13b5-438f-b596-f6983bf7c39f}">
-		<property name="bypass">
-			<value>true</value>
+	<object class="SpatialiserEffect" id="{73e778d2-36bb-4ece-a011-b128875a9dc5}">
+		<property name="minimumDistance">
+			<value>1.60000002</value>
 		</property>
 		<property name="maximumDistance">
 			<value>25</value>
@@ -189,64 +188,16 @@
 			<value>1</value>
 		</property>
 		<property name="soundSize">
-			<value>2</value>
-		</property>
-		<property name="minimumExtent">
-			<value>100</value>
-		</property>
-	</object>
-	<object class="SpatialiserEffect" id="{52ac29c1-6ff0-4560-bdf2-efb62ab4e898}">
-		<property name="maximumDistance">
-			<value>25</value>
-		</property>
-		<property name="overrideRange">
-			<value>true</value>
-		</property>
-		<property name="extentMode">
-			<value>1</value>
-		</property>
-		<property name="soundSize">
-			<value>1.80000007</value>
-		</property>
-		<property name="minimumExtent">
-			<value>100</value>
+			<value>0.5</value>
 		</property>
 		<relationship name="automators">
-			<destination>{9b442f1c-f4f9-4d41-91e4-fa32d9f374b0}</destination>
+			<destination>{cbc55ef5-b703-4fef-ace0-80fbca333986}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{1be4eb17-a13e-4774-bdc8-deb77123b0bc}" />
-	<object class="Automator" id="{9b442f1c-f4f9-4d41-91e4-fa32d9f374b0}">
+	<object class="Automator" id="{cbc55ef5-b703-4fef-ace0-80fbca333986}">
 		<property name="nameOfPropertyBeingAutomated">
 			<value>panBlend</value>
-		</property>
-		<relationship name="automationCurves">
-			<destination>{f6f0ace9-b4da-401d-8c36-e2da1bcf7d18}</destination>
-		</relationship>
-	</object>
-	<object class="AutomationCurve" id="{f6f0ace9-b4da-401d-8c36-e2da1bcf7d18}">
-		<relationship name="parameter">
-			<destination>{b05742e0-b9c2-4cea-a0c1-f92744541fe6}</destination>
-		</relationship>
-		<relationship name="automationPoints">
-			<destination>{e5aaa282-de57-4432-8ef4-945933cfa82d}</destination>
-			<destination>{b64b9735-6ac1-482c-81ec-ed5f31d87259}</destination>
-		</relationship>
-	</object>
-	<object class="AutomationPoint" id="{e5aaa282-de57-4432-8ef4-945933cfa82d}">
-		<property name="position">
-			<value>20</value>
-		</property>
-		<property name="value">
-			<value>1</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{b64b9735-6ac1-482c-81ec-ed5f31d87259}">
-		<property name="position">
-			<value>0</value>
-		</property>
-		<property name="value">
-			<value>0.5</value>
 		</property>
 	</object>
 </objects>

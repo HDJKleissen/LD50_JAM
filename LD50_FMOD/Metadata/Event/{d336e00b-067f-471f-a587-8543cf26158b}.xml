@@ -73,7 +73,7 @@
 	</object>
 	<object class="EventMixerMaster" id="{6847ba08-1bd8-4c72-a98a-b7f2628e9f8a}">
 		<property name="volume">
-			<value>-8.5</value>
+			<value>-21.5</value>
 		</property>
 		<relationship name="effectChain">
 			<destination>{385071c2-61df-43d4-9b6a-e42fb2b3ea02}</destination>
@@ -122,7 +122,6 @@
 	<object class="MixerBusEffectChain" id="{385071c2-61df-43d4-9b6a-e42fb2b3ea02}">
 		<relationship name="effects">
 			<destination>{c844bd25-8431-426a-8e6f-67202c45ec80}</destination>
-			<destination>{aed497b1-6ea3-42bb-a1da-5daaa75eb7b8}</destination>
 			<destination>{fb032335-c52f-4db0-a484-9c7041c15da2}</destination>
 		</relationship>
 	</object>
@@ -151,15 +150,12 @@
 	</object>
 	<object class="MixerBusPanner" id="{144609eb-7dda-4837-9785-d17c2f2cb485}" />
 	<object class="MixerBusFader" id="{c844bd25-8431-426a-8e6f-67202c45ec80}" />
-	<object class="SpatialiserEffect" id="{aed497b1-6ea3-42bb-a1da-5daaa75eb7b8}">
-		<property name="bypass">
-			<value>true</value>
-		</property>
+	<object class="SpatialiserEffect" id="{fb032335-c52f-4db0-a484-9c7041c15da2}">
 		<property name="minimumDistance">
 			<value>0</value>
 		</property>
 		<property name="maximumDistance">
-			<value>25</value>
+			<value>30</value>
 		</property>
 		<property name="overrideRange">
 			<value>true</value>
@@ -170,11 +166,7 @@
 		<property name="soundSize">
 			<value>0.100000001</value>
 		</property>
-		<relationship name="automators">
-			<destination>{55d555c5-1b25-4773-94d1-4f91bf3c253d}</destination>
-		</relationship>
 	</object>
-	<object class="SpatialiserEffect" id="{fb032335-c52f-4db0-a484-9c7041c15da2}" />
 	<object class="AutomationPoint" id="{4c9add08-971e-4758-a1ec-bbe37ea540ff}">
 		<property name="position">
 			<value>0.011661795778303452</value>
@@ -195,37 +187,4 @@
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{31cee9ff-abfb-4f50-933d-d90442e445eb}" />
-	<object class="Automator" id="{55d555c5-1b25-4773-94d1-4f91bf3c253d}">
-		<property name="nameOfPropertyBeingAutomated">
-			<value>panBlend</value>
-		</property>
-		<relationship name="automationCurves">
-			<destination>{23265809-d5d4-4942-bd27-7846b11ab172}</destination>
-		</relationship>
-	</object>
-	<object class="AutomationCurve" id="{23265809-d5d4-4942-bd27-7846b11ab172}">
-		<relationship name="parameter">
-			<destination>{b05742e0-b9c2-4cea-a0c1-f92744541fe6}</destination>
-		</relationship>
-		<relationship name="automationPoints">
-			<destination>{0d0cdce6-78be-4319-b83b-c12a92d8191a}</destination>
-			<destination>{c767451e-c1ea-4342-b675-a8940b86ffbc}</destination>
-		</relationship>
-	</object>
-	<object class="AutomationPoint" id="{0d0cdce6-78be-4319-b83b-c12a92d8191a}">
-		<property name="position">
-			<value>0</value>
-		</property>
-		<property name="value">
-			<value>0</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{c767451e-c1ea-4342-b675-a8940b86ffbc}">
-		<property name="position">
-			<value>20</value>
-		</property>
-		<property name="value">
-			<value>1</value>
-		</property>
-	</object>
 </objects>
