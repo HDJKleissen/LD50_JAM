@@ -15,7 +15,7 @@ MonoBehaviour:
   Difficulty: 0
   Illnesses:
   - {fileID: 11400000, guid: e741d2d575ff94f42b1a7269861bdc44, type: 2}
-  MinTimeBetweenIllness: 1
+  MinTimeBetweenIllness: 3
   MaxTimeBetweenIllness: 20
-  TimeFromMaxTimeToMinTime: 15
+  TimeFromMaxTimeToMinTime: 40
   TimePerIllnessDifficulty: 120

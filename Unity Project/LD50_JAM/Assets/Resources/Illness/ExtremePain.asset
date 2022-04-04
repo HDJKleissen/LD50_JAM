@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29d451161e00c1e479a622167c56a5bf, type: 3}
   m_Name: ExtremePain
   m_EditorClassIdentifier: 
-  Difficulty: 3
+  Difficulty: 0
   PopupSprite: {fileID: 839795496, guid: b4f1ca7ff978da84d8af561cbee25191, type: 3}
   IllnessName: Extreme Pain
   CuredBy: 1
