@@ -3925,6 +3925,14 @@ PrefabInstance:
       propertyPath: m_Value
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5837591192148620559, guid: ce376290c0f4b3c4e8e756155525eef5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 85f88353f7c4a3245800d6cbf106ed7b, type: 3}
+    - target: {fileID: 6088900886274403641, guid: ce376290c0f4b3c4e8e756155525eef5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 85f88353f7c4a3245800d6cbf106ed7b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce376290c0f4b3c4e8e756155525eef5, type: 3}
 --- !u!1 &1255412378
@@ -4709,7 +4717,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.5421995, y: 1}
+    m_SensorSize: {x: 1.9414269, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
