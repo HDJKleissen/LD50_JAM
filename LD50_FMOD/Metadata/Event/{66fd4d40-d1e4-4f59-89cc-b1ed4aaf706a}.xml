@@ -54,7 +54,7 @@
 			<destination>{88970b83-1fc8-46fe-827d-71cdccdea33e}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{6917f854-ef28-4c98-a676-11f95997a851}</destination>
+			<destination>{308043fc-64c0-4365-95c0-821a465f123e}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{9950c8be-2f97-4387-b557-cdbc0a414ca7}" />
@@ -103,7 +103,7 @@
 			<value>true</value>
 		</property>
 		<property name="triggerProbability">
-			<value>20</value>
+			<value>9.5</value>
 		</property>
 		<property name="length">
 			<value>2.5625</value>
