@@ -25,7 +25,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonUp("Interact"))
+        if (Input.GetButtonDown("Interact"))
         {
             if (closestInteractable != null)
             {
@@ -38,7 +38,7 @@ public class PlayerInputHandler : MonoBehaviour
     public void SetHeldCure(CureType cure)
     {
         playerCure.SetHeldCure(cure);
-        //FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Pickup", gameObject);
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Pickup", gameObject);
     }
 
     public CureType GetHeldCure()
@@ -70,7 +70,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.GetComponent<Patient>() != null)
+        if (collision.GetComponent<IInteractable>() != null)
         {
             closestInteractable = null;
         }

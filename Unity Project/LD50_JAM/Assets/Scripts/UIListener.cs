@@ -16,16 +16,18 @@ public class UIListener : MonoBehaviour
     {
         PlayerCure.OnCureChange += SetHeldCureUI;
         GameSession.OnTimerChange += SetTimerUI;
-        GameSession.OnCureSuccessesChange += SetCureSuccessesUI;
-        GameSession.OnCureFailuresChange += SetCureFailuresUI;
+        GameSession.OnPatientsFullyCuredChange += SetPatientsCuredUI;
+        GameSession.OnPatientsDiedChange += SetPatientsDiedUI;
+        GameSession.SetCorrectUIOnGameStart += SetPatientsDiedUI;
     }
 
     private void OnDestroy()
     { 
         PlayerCure.OnCureChange -= SetHeldCureUI;
         GameSession.OnTimerChange -= SetTimerUI;
-        GameSession.OnCureSuccessesChange -= SetCureSuccessesUI;
-        GameSession.OnCureFailuresChange -= SetCureFailuresUI;
+        GameSession.OnPatientsFullyCuredChange -= SetPatientsCuredUI;
+        GameSession.OnPatientsDiedChange -= SetPatientsDiedUI;
+        GameSession.SetCorrectUIOnGameStart += SetPatientsDiedUI;
     }
 
     void SetHeldCureUI(CureType cureType)
@@ -38,13 +40,13 @@ public class UIListener : MonoBehaviour
         TimerText.SetText(Util.FormatTime(timer));
     }
 
-    void SetCureSuccessesUI(int amount)
+    void SetPatientsCuredUI(int amount)
     {
         CureSuccessesAmountText.SetText(amount.ToString());
     }
-    void SetCureFailuresUI(int amount)
+    void SetPatientsDiedUI(int amount, int maxAmount)
     {
-        CureFailuresAmountText.SetText(amount.ToString());
+        CureFailuresAmountText.SetText(amount + "/" + maxAmount);
     }
 
     // Update is called once per frame

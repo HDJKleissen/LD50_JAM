@@ -10,23 +10,36 @@ public class GameSession : MonoBehaviour
 
     [SerializeField] List<(Illness[], CureType, bool)> cureAttempts = new List<(Illness[], CureType, bool)>();
 
+    public int maxPatientDeaths;
     int cureSuccesses = 0;
     int cureFailures = 0;
+    int patientDeaths = 0;
+    int patientFullyCured = 0;
 
     public static Action<float> OnTimerChange;
-    public static Action<int> OnCureSuccessesChange, OnCureFailuresChange;
-
+    public static Action<int> OnCureSuccessesChange, OnCureFailuresChange, OnPatientsFullyCuredChange;
+    public static Action<int, int> OnPatientsDiedChange;
+    public static Action<int, int> SetCorrectUIOnGameStart;
 
     public void Awake()
     {
         Patient.OnCureSuccess += RegisterCureSuccess;
         Patient.OnCureFailure += RegisterCureFailure;
+        Patient.OnPatientDeath += RegisterPatientDeath;
+        BedGenerator.OnPatientCompletelyCured += RegisterPatientFullyCured;
+    }
+
+    private void Start()
+    {
+        SetCorrectUIOnGameStart?.Invoke(0, maxPatientDeaths);
     }
 
     public void OnDestroy()
     {
         Patient.OnCureSuccess -= RegisterCureSuccess;
-        Patient.OnCureFailure += RegisterCureFailure;
+        Patient.OnCureFailure -= RegisterCureFailure;
+        Patient.OnPatientDeath -= RegisterPatientDeath;
+        BedGenerator.OnPatientCompletelyCured -= RegisterPatientFullyCured;
     }
 
     void RegisterCureSuccess(Patient patient, Illness illness, CureType cureType)
@@ -41,7 +54,17 @@ public class GameSession : MonoBehaviour
         cureAttempts.Add((illnesses, cureType, false));
         cureFailures++;
         OnCureFailuresChange?.Invoke(cureFailures);
+    }
 
+    void RegisterPatientDeath(Patient patient)
+    {
+        patientDeaths++;
+        OnPatientsDiedChange?.Invoke(patientDeaths, maxPatientDeaths);
+    }
+    void RegisterPatientFullyCured(Patient patient)
+    {
+        patientFullyCured++;
+        OnPatientsFullyCuredChange?.Invoke(patientFullyCured);
     }
 
     public void Update()

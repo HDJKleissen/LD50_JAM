@@ -19,11 +19,13 @@ public class BedPopupGroup : MonoBehaviour
     {
         Patient.OnIllnessCreate += CreateIllnessPopup;
         Patient.OnCureSuccess += RemoveIllnessPopup;
+        Patient.OnPatientDeath += DestroyAllPopups;
     }
     void OnDestroy()
     {
         Patient.OnIllnessCreate -= CreateIllnessPopup;
         Patient.OnCureSuccess -= RemoveIllnessPopup;
+        Patient.OnPatientDeath -= DestroyAllPopups;
     }
     void CreateIllnessPopup(Patient creatingPatient, Illness illness)
     {
@@ -33,6 +35,20 @@ public class BedPopupGroup : MonoBehaviour
         }
     }
 
+    void DestroyAllPopups(Patient deadPatient)
+    {
+        if(patient == deadPatient)
+        {
+            IllnessPopupDict.Clear();
+            foreach(LerpToPosition ltp in Popups)
+            {
+                Destroy(ltp.gameObject);
+            }
+
+            Popups.Clear();
+        }
+
+    }
 
     void RemoveIllnessPopup(Patient removingPatient, Illness illness, CureType cureType)
     {

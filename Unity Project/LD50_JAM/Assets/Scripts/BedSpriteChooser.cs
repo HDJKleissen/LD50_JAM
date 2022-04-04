@@ -6,6 +6,7 @@ public class BedSpriteChooser : MonoBehaviour
 {
     public bool HasPatient;
 
+    Patient bed;
     [SerializeField] BedDirection bedDirection;
     [SerializeField] SpriteRenderer spriteRenderer;
     [SerializeField] PolygonCollider2D polygonCollider;
@@ -14,13 +15,18 @@ public class BedSpriteChooser : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        bed = GetComponent<Patient>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        bool previousHasPatient = HasPatient;
+        HasPatient = bed.HasPatient;
+        if(HasPatient != previousHasPatient)
+        {
+            UpdateSprite(HasPatient);
+        }
     }
 
     void UpdateSprite(bool hasPatient)
@@ -55,7 +61,6 @@ public class BedSpriteChooser : MonoBehaviour
 
     private void OnValidate()
     {
-        HasPatient = GetComponent<Patient>().HasPatient;
         UpdateSprite(HasPatient);
     }
 
