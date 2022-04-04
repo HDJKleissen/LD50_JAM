@@ -123,7 +123,7 @@
 	<object class="MixerBusEffectChain" id="{a3ba4d43-22f3-4432-8bdb-5f6bedc0f15c}">
 		<relationship name="effects">
 			<destination>{48501854-eb2d-48e3-a438-4e375127b21f}</destination>
-			<destination>{73e778d2-36bb-4ece-a011-b128875a9dc5}</destination>
+			<destination>{519792d4-a5e0-4148-a493-35165b0b47c2}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{d742a887-5665-4f7b-8bf6-597dac631377}" />
@@ -174,7 +174,7 @@
 	</object>
 	<object class="MixerBusPanner" id="{227a3728-f107-4664-ad30-9942a25483f5}" />
 	<object class="MixerBusFader" id="{48501854-eb2d-48e3-a438-4e375127b21f}" />
-	<object class="SpatialiserEffect" id="{73e778d2-36bb-4ece-a011-b128875a9dc5}">
+	<object class="SpatialiserEffect" id="{519792d4-a5e0-4148-a493-35165b0b47c2}">
 		<property name="minimumDistance">
 			<value>1.60000002</value>
 		</property>
@@ -188,14 +188,14 @@
 			<value>1</value>
 		</property>
 		<property name="soundSize">
-			<value>0.5</value>
+			<value>0.150000006</value>
 		</property>
 		<relationship name="automators">
-			<destination>{cbc55ef5-b703-4fef-ace0-80fbca333986}</destination>
+			<destination>{683c27bf-c450-4935-a9e4-fb7d00e0a9f2}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{1be4eb17-a13e-4774-bdc8-deb77123b0bc}" />
-	<object class="Automator" id="{cbc55ef5-b703-4fef-ace0-80fbca333986}">
+	<object class="Automator" id="{683c27bf-c450-4935-a9e4-fb7d00e0a9f2}">
 		<property name="nameOfPropertyBeingAutomated">
 			<value>panBlend</value>
 		</property>
