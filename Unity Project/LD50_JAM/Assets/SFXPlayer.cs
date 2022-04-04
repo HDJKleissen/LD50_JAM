@@ -50,12 +50,12 @@ public class SFXPlayer : MonoBehaviour
                 FMODUnity.RuntimeManager.PlayOneShotAttached("event:/CureBandages", patient.gameObject);
                 break;
         }
-        // @Pat:  Play Cure Success sound, can use patient.transform for a location, switch on cureType for different cure sounds
-    }
+     }
 
     private void PlayOnCureFailure(Patient patient, Illness[] illnesses, CureType cureType)
     {
         // @Pat:  Play Cure Failure sound, can use patient.transform for a location, cureType is the cure that was attempted to be used
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/WrongCureVO", patient.gameObject);
     }
 
     // Update is called once per frame
