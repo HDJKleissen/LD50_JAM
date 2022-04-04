@@ -72,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{f4a96c96-6f26-401d-860e-10e52f0b4df2}">
+		<property name="volume">
+			<value>-9</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{e3630fa2-3368-415c-b55c-506422079486}</destination>
 		</relationship>
@@ -147,7 +150,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{e69812e7-1e87-4174-ba72-413a995935ad}" />
 	<object class="MixerBusFader" id="{58a8f5f4-2d59-4b53-850e-4f31f0a137e1}" />
-	<object class="SpatialiserEffect" id="{3bb14e64-c5fc-464a-8ef6-8fa32ee7e824}" />
+	<object class="SpatialiserEffect" id="{3bb14e64-c5fc-464a-8ef6-8fa32ee7e824}">
+		<property name="maximumDistance">
+			<value>50</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{3100f849-8931-4d98-8a0e-0b886107e42b}">
 		<property name="position">
 			<value>1.65625</value>
