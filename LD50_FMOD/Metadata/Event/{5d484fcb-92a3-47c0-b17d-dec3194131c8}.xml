@@ -463,6 +463,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{5aee6114-7b2c-41f0-bb40-d14308ef9702}">
+		<property name="volume">
+			<value>-10.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 2</value>
 		</property>
@@ -555,7 +558,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{b64d7586-2c09-4c25-8085-6b6d19584046}">
 		<property name="volume">
-			<value>-3</value>
+			<value>-6.5</value>
 		</property>
 		<property name="name">
 			<value>Audio 3</value>
@@ -1094,7 +1097,7 @@
 			<value>0</value>
 		</property>
 		<property name="maximumDistance">
-			<value>50</value>
+			<value>30</value>
 		</property>
 		<property name="overrideRange">
 			<value>true</value>
@@ -1230,7 +1233,7 @@
 			<value>12.282280523779974</value>
 		</property>
 		<property name="value">
-			<value>-10</value>
+			<value>-14</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{5560458a-2dd3-4fb2-b5eb-41f0a2f9cafb}">
@@ -1238,7 +1241,7 @@
 			<value>17.355396392297788</value>
 		</property>
 		<property name="value">
-			<value>-2</value>
+			<value>-9</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{296e9143-e669-45b0-889b-2140ccd7b5c3}">
@@ -1246,7 +1249,7 @@
 			<value>18.938541064846021</value>
 		</property>
 		<property name="value">
-			<value>-2</value>
+			<value>-9</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{b2ea71a7-0706-4464-9766-5c20260e0041}">
@@ -1271,7 +1274,7 @@
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>0.5</value>
+			<value>0.799999952</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{82f27981-0635-4104-a5ee-f4905c9d8f8c}">
