@@ -1607,6 +1607,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1665824859}
   - component: {fileID: 1665824860}
+  - component: {fileID: 1665824861}
   m_Layer: 5
   m_Name: SFXSlider
   m_TagString: Untagged
@@ -1687,7 +1688,32 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1665824861}
+        m_TargetAssemblyTypeName: BusController, Assembly-CSharp
+        m_MethodName: VolumeLevel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1665824861
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1665824858}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f05480ccb2f4f8580cf3634fc80467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busPath: SFXBus
 --- !u!1 &1747655562
 GameObject:
   m_ObjectHideFlags: 0
@@ -2035,6 +2061,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1895333202}
   - component: {fileID: 1895333203}
+  - component: {fileID: 1895333204}
   m_Layer: 5
   m_Name: MusicSlider
   m_TagString: Untagged
@@ -2115,7 +2142,32 @@ MonoBehaviour:
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1895333204}
+        m_TargetAssemblyTypeName: BusController, Assembly-CSharp
+        m_MethodName: VolumeLevel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1895333204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895333201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f05480ccb2f4f8580cf3634fc80467, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  busPath: MusicBus
 --- !u!1 &1897793360
 GameObject:
   m_ObjectHideFlags: 0
