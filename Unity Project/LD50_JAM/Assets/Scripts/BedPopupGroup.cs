@@ -77,6 +77,14 @@ public class BedPopupGroup : MonoBehaviour
                 newPosition.z
             );
         }
+        if (newPosition.y < 0 || newPosition.y > Screen.height)
+        {
+            newPosition = new Vector3(
+                newPosition.x,
+                Mathf.Clamp(newPosition.y, 0, Screen.height), //Mathf.Clamp(newPosition.y, 0, PopupGroupMaxY - ((float)popupAmount / 2) * PopupOffset),
+                newPosition.z
+            );
+        }
 
         transform.position = newPosition;
 

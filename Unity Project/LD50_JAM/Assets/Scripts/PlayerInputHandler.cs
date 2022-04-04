@@ -14,6 +14,8 @@ public class PlayerInputHandler : MonoBehaviour
 
     [SerializeField] Transform closestInteractable;
 
+    public GameObject TutorialUI;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,11 +70,23 @@ public class PlayerInputHandler : MonoBehaviour
         //Debug.Log("Entered trigger " + collision.name);
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<ShowTutorial>() != null)
+        {
+            TutorialUI.gameObject.SetActive(true);
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<IInteractable>() != null)
         {
             closestInteractable = null;
+        }
+        else if(collision.GetComponent<ShowTutorial>() != null)
+        {
+            TutorialUI.gameObject.SetActive(false);
         }
     }
 

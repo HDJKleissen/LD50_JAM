@@ -34,6 +34,21 @@ public class Patient : MonoBehaviour, IInteractable
         {
             bedGenerator = GetComponent<BedGenerator>();
         }
+        BedGenerator.OnPatientCompletelyCured += ResetBed;
+    }
+
+    void OnDestroy()
+    {
+        BedGenerator.OnPatientCompletelyCured -= ResetBed;
+    }
+
+    private void ResetBed(Patient patient)
+    {
+        if(patient == this)
+        {
+            ProgressValue = 0;
+            Illnesses.Clear();
+        }
     }
 
     private void Update()
