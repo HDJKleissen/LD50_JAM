@@ -21,9 +21,7 @@ public class Patient : MonoBehaviour, IInteractable
     public Slider PatientProgressSlider;
     public float ProgressPerIllnessPerSecond;
     public float IllnessRecoveryPerSecond;
-    float progressValue;
-
-    float patientTimer;
+    public float ProgressValue;
 
     // Start is called before the first frame update
     void Start()
@@ -43,15 +41,15 @@ public class Patient : MonoBehaviour, IInteractable
         int illnessAmount = Illnesses.Count;
         if(illnessAmount == 0)
         {
-            progressValue -= IllnessRecoveryPerSecond * Time.deltaTime;
+            ProgressValue -= IllnessRecoveryPerSecond * Time.deltaTime;
         }
         else
         {
-            progressValue += ProgressPerIllnessPerSecond * illnessAmount * Time.deltaTime;
+            ProgressValue += ProgressPerIllnessPerSecond * illnessAmount * Time.deltaTime;
         }
-        progressValue = Mathf.Clamp(progressValue, 0, 1.01f);
+        ProgressValue = Mathf.Clamp(ProgressValue, 0, 1.01f);
         
-        if(progressValue == 0)
+        if(ProgressValue == 0)
         {
             PatientProgressSlider.gameObject.SetActive(false);
         }
@@ -60,11 +58,11 @@ public class Patient : MonoBehaviour, IInteractable
             PatientProgressSlider.gameObject.SetActive(true);
         }
 
-        PatientProgressSlider.value = progressValue;
+        PatientProgressSlider.value = ProgressValue;
 
-        if(progressValue >= 1)
+        if(ProgressValue >= 1)
         {
-            progressValue = 0;
+            ProgressValue = 0;
             HasPatient = false;
             OnPatientDeath?.Invoke(this);
             Illnesses.Clear();

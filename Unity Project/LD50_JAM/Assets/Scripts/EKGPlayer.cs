@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,15 +9,44 @@ public class EKGPlayer : MonoBehaviour
     private Patient Patient;
 
     public bool Dying, Dead;
+    bool EKGPaused = false; 
 
     void Start()
     {
         Patient = gameObject.GetComponent<Patient>();
-        if (Patient.HasPatient)
+        //Invoke("StartPlayingSound", Random.Range(0f, 0.5f)); Could use this to avoid all bein in sync, but not sure if that's better
+        StartPlayingSound();
+        SetEKGSoundPaused(Patient.HasPatient);
+        Patient.OnPatientDeath += PlayDeathSound;
+        BedGenerator.OnPatientCompletelyCured += ResetEKG;
+    }
+
+    private void ResetEKG(Patient obj)
+    {
+        if(obj == Patient)
         {
-            //Invoke("StartPlayingSound", Random.Range(0f, 0.5f)); Could use this to avoid all bein in sync, but not sure if that's better
-            StartPlayingSound();
+            SetDead(false);
+            SetDying(false);
+            SetEKGSoundPaused(true);
         }
+    }
+
+    private void PlayDeathSound(Patient deadPatient)
+    {
+        if(deadPatient == Patient)
+        {
+            SetDead(true);
+            SetDying(true);
+            StartCoroutine(PauseAfterDeath());
+        }
+    }
+
+    IEnumerator PauseAfterDeath()
+    {
+        yield return new WaitForSeconds(0.3f);
+        SetEKGSoundPaused(false);
+        SetDying(false);
+        SetDead(false);
     }
 
     private void StartPlayingSound()
@@ -27,14 +57,24 @@ public class EKGPlayer : MonoBehaviour
         EKG.release();
         SetDead(Dead);
         SetDying(Dying);
+        SetEKGSoundPaused(Patient.HasPatient);
+    }
+
+    void SetEKGSoundPaused(bool paused)
+    {
+        EKGPaused = paused;
+        EKG.setPaused(paused);
     }
 
     private void Update()
     {
         if (Patient.HasPatient)
         {
-            SetDead(Dead);
-            SetDying(Dying);
+            if (EKGPaused)
+            {
+                SetEKGSoundPaused(false);
+            }
+            SetDying(Patient.ProgressValue > 0.5f);
         }
     }
 

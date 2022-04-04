@@ -19,6 +19,8 @@ public class MenuButtons : MonoBehaviour
 
     public void LoadScene(string sceneName)
     {
+        // fuck it
+        Time.timeScale = 1;
         SceneManager.LoadScene(sceneName);
     }
 

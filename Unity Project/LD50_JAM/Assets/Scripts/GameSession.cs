@@ -16,6 +16,8 @@ public class GameSession : MonoBehaviour
     int patientDeaths = 0;
     int patientFullyCured = 0;
 
+    public GameObject GameOverScreen;
+
     public static Action<float> OnTimerChange;
     public static Action<int> OnCureSuccessesChange, OnCureFailuresChange, OnPatientsFullyCuredChange;
     public static Action<int, int> OnPatientsDiedChange;
@@ -60,6 +62,11 @@ public class GameSession : MonoBehaviour
     {
         patientDeaths++;
         OnPatientsDiedChange?.Invoke(patientDeaths, maxPatientDeaths);
+        if(patientDeaths >= maxPatientDeaths)
+        {
+            Time.timeScale = 0;
+            GameOverScreen.SetActive(true);
+        }
     }
     void RegisterPatientFullyCured(Patient patient)
     {

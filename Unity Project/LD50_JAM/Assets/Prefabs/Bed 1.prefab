@@ -302,6 +302,7 @@ GameObject:
   - component: {fileID: 4902536969339103198}
   - component: {fileID: 4902536969339103199}
   - component: {fileID: 4902536969339103196}
+  - component: {fileID: 4961191162940973239}
   - component: {fileID: 4902536969339103168}
   - component: {fileID: 6223460040246454666}
   - component: {fileID: 5873818505302324219}
@@ -419,6 +420,21 @@ MonoBehaviour:
   PatientProgressSlider: {fileID: 7661027740667497718}
   ProgressPerIllnessPerSecond: 0.02
   IllnessRecoveryPerSecond: 0
+  ProgressValue: 0
+--- !u!114 &4961191162940973239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4902536969339103197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 818924986eda24116ac8c325d68ff705, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dying: 0
+  Dead: 0
 --- !u!60 &4902536969339103168
 PolygonCollider2D:
   m_ObjectHideFlags: 0
