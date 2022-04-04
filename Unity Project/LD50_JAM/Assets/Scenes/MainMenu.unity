@@ -301,8 +301,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Options
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d9103e69ca2afaa4c90d1e64c469649f, type: 2}
-  m_sharedMaterial: {fileID: 7620249979278060518, guid: d9103e69ca2afaa4c90d1e64c469649f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c1286a779fc9d80489ee4851a5efdf97, type: 2}
+  m_sharedMaterial: {fileID: 6233421211968136098, guid: c1286a779fc9d80489ee4851a5efdf97, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -550,8 +550,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d9103e69ca2afaa4c90d1e64c469649f, type: 2}
-  m_sharedMaterial: {fileID: 7620249979278060518, guid: d9103e69ca2afaa4c90d1e64c469649f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c1286a779fc9d80489ee4851a5efdf97, type: 2}
+  m_sharedMaterial: {fileID: 6233421211968136098, guid: c1286a779fc9d80489ee4851a5efdf97, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1011,8 +1011,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d9103e69ca2afaa4c90d1e64c469649f, type: 2}
-  m_sharedMaterial: {fileID: 7620249979278060518, guid: d9103e69ca2afaa4c90d1e64c469649f, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c1286a779fc9d80489ee4851a5efdf97, type: 2}
+  m_sharedMaterial: {fileID: 6233421211968136098, guid: c1286a779fc9d80489ee4851a5efdf97, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1169,7 +1169,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1116166188}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 201910407}
+        m_TargetAssemblyTypeName: MenuButtons, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: OptionsMenu
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1116166188
 MonoBehaviour:
   m_ObjectHideFlags: 0
