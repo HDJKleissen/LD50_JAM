@@ -18,7 +18,7 @@ public class SFXPlayer : MonoBehaviour
 
     private void PlayOnNewPatientInBed(Patient patient)
     {
-        // @Pat: Play New Patient sound, can use patient.transform for a location
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/NewPatient", patient.gameObject);
     }
 
     private void PlayOnPatientsFullyCured(Patient patient)
@@ -28,12 +28,12 @@ public class SFXPlayer : MonoBehaviour
 
     private void PlayOnPatientDeath(Patient patient)
     {
-        // @Pat:  Play Patient death sound, can use patient.transform for a location
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/Death", patient.gameObject);
     }
 
     private void PlayOnIllnessCreate(Patient patient, Illness illness)
     {
-        // @Pat:  Play New illness sound, can use patient.transform for a location, ignore illness probably
+        FMODUnity.RuntimeManager.PlayOneShotAttached("event:/NewIllness", patient.gameObject);
     }
 
     private void PlayOnCureSuccess(Patient patient, Illness illness, CureType cureType)
