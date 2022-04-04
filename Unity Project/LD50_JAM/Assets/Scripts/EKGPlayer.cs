@@ -6,6 +6,7 @@ using UnityEngine;
 public class EKGPlayer : MonoBehaviour
 {
     FMOD.Studio.EventInstance EKG;
+    FMOD.Studio.PLAYBACK_STATE pb;
     private Patient Patient;
 
     public bool Dying, Dead;
@@ -14,8 +15,10 @@ public class EKGPlayer : MonoBehaviour
     void Start()
     {
         Patient = gameObject.GetComponent<Patient>();
+        EKG = FMODUnity.RuntimeManager.CreateInstance("event:/EKG");
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(EKG, transform);
         //Invoke("StartPlayingSound", Random.Range(0f, 0.5f)); Could use this to avoid all bein in sync, but not sure if that's better
-        StartPlayingSound();
+        //StartPlayingSound();
         SetEKGSoundPaused(!Patient.HasPatient);
         Patient.OnPatientDeath += PlayDeathSound;
         BedGenerator.OnPatientCompletelyCured += ResetEKG;
@@ -51,27 +54,25 @@ public class EKGPlayer : MonoBehaviour
 
     private void StartPlayingSound()
     {
-        EKG = FMODUnity.RuntimeManager.CreateInstance("event:/EKG");
-        FMODUnity.RuntimeManager.AttachInstanceToGameObject(EKG, transform);
-        EKG.start();
-        EKG.release();
         SetDead(Dead);
         SetDying(Dying);
+        EKG.start();
     }
 
     void SetEKGSoundPaused(bool paused)
     {
         EKGPaused = paused;
-        EKG.setPaused(paused);
+        EKG.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 
     private void Update()
     {
         if (Patient.HasPatient)
         {
-            if (EKGPaused)
+            EKG.getPlaybackState(out pb);
+            if (pb != FMOD.Studio.PLAYBACK_STATE.PLAYING)
             {
-                SetEKGSoundPaused(false);
+                StartPlayingSound();
             }
             SetDying(Patient.ProgressValue > 0.5f);
         }
@@ -91,6 +92,7 @@ public class EKGPlayer : MonoBehaviour
 
     private void OnDestroy()
     {
+        EKG.release();
         EKG.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
     }
 }
