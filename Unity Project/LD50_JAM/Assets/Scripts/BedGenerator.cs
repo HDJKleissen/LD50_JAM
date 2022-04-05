@@ -28,6 +28,8 @@ public class BedGenerator : MonoBehaviour
 
     public static event Action<Patient> OnPatientCompletelyCured;
     public static event Action<Patient> OnNewPatientInBed;
+
+    public GameObject PatientCuredHeartPrefab;
     // Start is called before the first frame update
     void Start()
     {
@@ -119,30 +121,32 @@ public class BedGenerator : MonoBehaviour
                     currentMaxDifficulty++;
                     illnessDifficultyTimer = 0;
                 }
+                if (nextIllnessTimer < currentTimeToNextIllness)
+                {
+                    currentAverageBetweenIllnessesTime = Mathf.Lerp(BedGeneratorSO.MaxTimeBetweenIllness, BedGeneratorSO.MinTimeBetweenIllness, betweenTimeTimer / BedGeneratorSO.TimeFromMaxTimeToMinTime);
+
+                    nextIllnessTimer += Time.deltaTime;
+                }
+                else
+                {
+                    // Get Illness and add to patient
+                    patient.CreateIllness(ChooseIllness());
+                    nextIllnessTimer = 0;
+                    currentTimeToNextIllness = currentAverageBetweenIllnessesTime + UnityEngine.Random.Range(-1f, 1f);
+                }
             }
-            else
+            else if (patient.ProgressValue == 0)
             {
                 StartCoroutine(GetNewIllnessChainCR(currentTimeBetweenPatients));
-                
+                GameObject heart = Instantiate(PatientCuredHeartPrefab);
+                heart.transform.position = transform.position;
                 patient.HasPatient = false;
                 IsDone = true;
                 OnPatientCompletelyCured?.Invoke(patient);
                 return;
+
             }
 
-            currentAverageBetweenIllnessesTime = Mathf.Lerp(BedGeneratorSO.MaxTimeBetweenIllness, BedGeneratorSO.MinTimeBetweenIllness, betweenTimeTimer / BedGeneratorSO.TimeFromMaxTimeToMinTime);
-
-            if (nextIllnessTimer < currentTimeToNextIllness)
-            {
-                nextIllnessTimer += Time.deltaTime;
-            }
-            else
-            {
-                // Get Illness and add to patient
-                patient.CreateIllness(ChooseIllness());
-                nextIllnessTimer = 0;
-                currentTimeToNextIllness = currentAverageBetweenIllnessesTime + UnityEngine.Random.Range(-1f, 1f);
-            }
         }
         else if (!patient.HasPatient)
         {

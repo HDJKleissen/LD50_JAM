@@ -34,6 +34,7 @@ public class GameSession : MonoBehaviour
     private void Start()
     {
         SetCorrectUIOnGameStart?.Invoke(0, maxPatientDeaths);
+        MusicPlayer.Instance?.SetMenu(false);
     }
 
     public void OnDestroy()
@@ -62,8 +63,13 @@ public class GameSession : MonoBehaviour
     {
         patientDeaths++;
         OnPatientsDiedChange?.Invoke(patientDeaths, maxPatientDeaths);
+        if(patientDeaths >= maxPatientDeaths - 3)
+        {
+            MusicPlayer.Instance?.SetPanic(true);
+        }
         if(patientDeaths >= maxPatientDeaths)
         {
+            MusicPlayer.Instance?.SetLose(true);
             Time.timeScale = 0;
             GameOverScreen.SetActive(true);
         }

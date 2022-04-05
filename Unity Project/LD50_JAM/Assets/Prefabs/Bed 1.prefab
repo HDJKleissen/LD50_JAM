@@ -420,8 +420,9 @@ MonoBehaviour:
   bedGenerator: {fileID: 0}
   PatientProgressSlider: {fileID: 7661027740667497718}
   ProgressPerIllnessPerSecond: 0.02
-  IllnessRecoveryPerSecond: 0
+  IllnessRecoveryPerSecond: 0.1
   ProgressValue: 0
+  previousProgressValue: 0
 --- !u!114 &4961191162940973239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,6 +509,7 @@ MonoBehaviour:
   timeUntilFirstPatient: 5
   illnessChains: []
   illnessChainDifficultyMax: 0
+  PatientCuredHeartPrefab: {fileID: 8500529133168144786, guid: ddf799e29c3668c4aa99eb430f8c5de9, type: 3}
 --- !u!114 &8911849250405807935
 MonoBehaviour:
   m_ObjectHideFlags: 0

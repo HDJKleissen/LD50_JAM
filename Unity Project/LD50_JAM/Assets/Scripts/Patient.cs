@@ -15,13 +15,13 @@ public class Patient : MonoBehaviour, IInteractable
     public static event Action<Patient, Illness, CureType> OnCureSuccess;
     public static event Action<Patient, Illness[], CureType> OnCureFailure;
     public static event Action<Patient, Illness> OnIllnessCreate;
-    public static event Action<Patient> OnPatientDeath;
+    public static event Action<Patient> OnPatientDeath, OnPatientEnterDanger, OnPatientExitDanger;
 
     public BedGenerator bedGenerator;
     public Slider PatientProgressSlider;
     public float ProgressPerIllnessPerSecond;
     public float IllnessRecoveryPerSecond;
-    public float ProgressValue;
+    public float ProgressValue, previousProgressValue = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -83,6 +83,17 @@ public class Patient : MonoBehaviour, IInteractable
             Illnesses.Clear();
             bedGenerator.IsDone = true;
         }
+
+        if (previousProgressValue <= 0.5f && ProgressValue > 0.5f)
+        {
+            OnPatientEnterDanger?.Invoke(this);
+        }
+        if (previousProgressValue > 0.5f && ProgressValue <= 0.5f)
+        {
+            OnPatientExitDanger?.Invoke(this);
+        }
+
+        previousProgressValue = ProgressValue;
     }
 
     public void CreateIllness(Illness illness)

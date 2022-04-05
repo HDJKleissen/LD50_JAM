@@ -18,4 +18,4 @@ MonoBehaviour:
   MinTimeBetweenIllness: 3
   MaxTimeBetweenIllness: 20
   TimeFromMaxTimeToMinTime: 40
-  TimePerIllnessDifficulty: 10
+  TimePerIllnessDifficulty: 30

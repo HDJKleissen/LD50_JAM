@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInputHandler : MonoBehaviour
 {
@@ -27,11 +28,27 @@ public class PlayerInputHandler : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("MainMenu");
+            MusicPlayer.Instance?.SetMenu(true);
+            MusicPlayer.Instance?.SetLose(false);
+            MusicPlayer.Instance?.SetPanic(false);
+        }
         if (Input.GetButtonDown("Interact"))
         {
             if (closestInteractable != null)
             {
                 closestInteractable.GetComponent<IInteractable>().Interact(this);
+                Patient pat = closestInteractable.GetComponent<Patient>();
+                if (pat != null)
+                {
+                    if(!pat.HasPatient)
+                    {
+                        return;
+                    }
+                }
+
                 OnPlayerInteract?.Invoke();
             }
         }

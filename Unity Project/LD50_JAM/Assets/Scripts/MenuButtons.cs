@@ -17,6 +17,12 @@ public class MenuButtons : MonoBehaviour
 
     }
 
+    public void SetMusicToMenu()
+    {
+        MusicPlayer.Instance?.SetLose(false);
+        MusicPlayer.Instance?.SetPanic(false);
+        MusicPlayer.Instance?.SetMenu(true);
+    }
     public void LoadScene(string sceneName)
     {
         // fuck it

@@ -8,6 +8,7 @@ public class LerpToPosition : MonoBehaviour
 
     [SerializeField] UpdateMoment updateMoment;
     public Vector3 Destination;
+    public Transform DestinationTransform;
     public float LerpSpeed;
 
     // Start is called before the first frame update
@@ -23,10 +24,18 @@ public class LerpToPosition : MonoBehaviour
         {
             if (Local)
             {
+                if (DestinationTransform != null)
+                {
+                    Destination = DestinationTransform.localPosition;
+                }
                 transform.localPosition = Vector3.Lerp(transform.localPosition, Destination, LerpSpeed * Time.deltaTime);
             }
             else
             {
+                if (DestinationTransform != null)
+                {
+                    Destination = DestinationTransform.position;
+                }
                 transform.position = Vector3.Lerp(transform.position, Destination, LerpSpeed * Time.deltaTime);
             }
         }
@@ -37,10 +46,18 @@ public class LerpToPosition : MonoBehaviour
         {
             if (Local)
             {
+                if (DestinationTransform != null)
+                {
+                    Destination = DestinationTransform.localPosition;
+                }
                 transform.localPosition = Vector3.Lerp(transform.localPosition, Destination, LerpSpeed * Time.fixedDeltaTime);
             }
             else
             {
+                if (DestinationTransform != null)
+                {
+                    Destination = DestinationTransform.position;
+                }
                 transform.position = Vector3.Lerp(transform.position, Destination, LerpSpeed * Time.fixedDeltaTime);
             }
         }
@@ -51,10 +68,18 @@ public class LerpToPosition : MonoBehaviour
         {
             if (Local)
             {
+                if (DestinationTransform != null)
+                {
+                    Destination = DestinationTransform.localPosition;
+                }
                 transform.localPosition = Vector3.Lerp(transform.localPosition, Destination, LerpSpeed * Time.deltaTime);
             }
             else
             {
+                if (DestinationTransform != null)
+                {
+                    Destination = DestinationTransform.position;
+                }
                 transform.position = Vector3.Lerp(transform.position, Destination, LerpSpeed * Time.deltaTime);
             }
         }

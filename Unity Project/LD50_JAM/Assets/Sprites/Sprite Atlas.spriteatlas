@@ -48,6 +48,7 @@ SpriteAtlas:
   - {fileID: 1333402514, guid: 5212ef94a6caab946ab451d619cc2f2f, type: 3}
   - {fileID: -1889187533, guid: 5212ef94a6caab946ab451d619cc2f2f, type: 3}
   - {fileID: 1040040284, guid: 5212ef94a6caab946ab451d619cc2f2f, type: 3}
+  - {fileID: 21300000, guid: 00b299a6b731e7f4aa264557a2fb65e7, type: 3}
   - {fileID: 21300000, guid: efe4f2e9d628be24a99f0d9c44600ca4, type: 3}
   - {fileID: 21300000, guid: 824bf39bb68b1a94a9c679ccaf182bd7, type: 3}
   - {fileID: -809814171, guid: 7957659b83c4975408eff77d82c05386, type: 3}
@@ -89,6 +90,7 @@ SpriteAtlas:
   - tileset_6
   - tileset_7
   - tileset_8
+  - icon
   - player_placeholder
   - knob
   - props_8

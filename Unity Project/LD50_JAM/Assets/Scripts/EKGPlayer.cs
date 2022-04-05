@@ -93,6 +93,6 @@ public class EKGPlayer : MonoBehaviour
     private void OnDestroy()
     {
         EKG.release();
-        EKG.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        EKG.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 }

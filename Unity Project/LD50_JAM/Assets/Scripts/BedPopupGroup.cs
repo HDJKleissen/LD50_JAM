@@ -11,8 +11,11 @@ public class BedPopupGroup : MonoBehaviour
     public List<LerpToPosition> Popups = new List<LerpToPosition>();
     Dictionary<Illness, BedPopup> IllnessPopupDict = new Dictionary<Illness, BedPopup>();
 
-    public float PopupGroupYOffset, PopupGroupMaxY;
+    public float PopupGroupYOffset, PopupGroupTopScreenYOffset, PopupGroupBottomScreenYOffset, PopupGroupSideScreenXOffset;
     public float PopupOffset;
+    public float FlashSpeed  = 10;
+
+    bool flashing = false;
 
     // Start is called before the first frame update
     void Start()
@@ -20,13 +23,40 @@ public class BedPopupGroup : MonoBehaviour
         Patient.OnIllnessCreate += CreateIllnessPopup;
         Patient.OnCureSuccess += RemoveIllnessPopup;
         Patient.OnPatientDeath += DestroyAllPopups;
+        Patient.OnPatientEnterDanger += SetDangerOn;
+        Patient.OnPatientExitDanger += SetDangerOff;
+        BedGenerator.OnPatientCompletelyCured += DestroyAllPopups;
     }
     void OnDestroy()
     {
         Patient.OnIllnessCreate -= CreateIllnessPopup;
         Patient.OnCureSuccess -= RemoveIllnessPopup;
         Patient.OnPatientDeath -= DestroyAllPopups;
+        BedGenerator.OnPatientCompletelyCured -= DestroyAllPopups;
+        Patient.OnPatientEnterDanger -= SetDangerOn;
+        Patient.OnPatientExitDanger -= SetDangerOff;
     }
+
+    void SetDangerOn(Patient dangerPatient)
+    {
+        if (dangerPatient == patient)
+        {
+            flashing = true;
+        }
+    }
+
+    void SetDangerOff(Patient dangerPatient)
+    {
+        if (dangerPatient == patient)
+        {
+            flashing = false;
+            foreach(LerpToPosition ltp in Popups)
+            {
+                ltp.GetComponent<Image>().color = Color.white;
+            }
+        }
+    }
+
     void CreateIllnessPopup(Patient creatingPatient, Illness illness)
     {
         if(creatingPatient == patient)
@@ -58,6 +88,17 @@ public class BedPopupGroup : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (flashing)
+        {
+            foreach (LerpToPosition ltp in Popups)
+            {
+                ltp.GetComponent<Image>().color = Mathf.Sin(Time.time * FlashSpeed) > 0 ? Color.white : Color.red;
+            }
+        }
+    }
+
     // Update is called once per frame
     void LateUpdate()
     {
@@ -68,20 +109,20 @@ public class BedPopupGroup : MonoBehaviour
 
         int popupAmount = Popups.Count;
 
-        if (newPosition.x < 0 || newPosition.x > Screen.width)
+        if (newPosition.x < PopupGroupSideScreenXOffset || newPosition.x > Screen.width - PopupGroupSideScreenXOffset)
         {
             stackVertical = true;
             newPosition = new Vector3(
-                Mathf.Clamp(newPosition.x, 0, Screen.width),
+                Mathf.Clamp(newPosition.x, PopupGroupSideScreenXOffset, Screen.width - PopupGroupSideScreenXOffset),
                 newPosition.y, //Mathf.Clamp(newPosition.y, 0, PopupGroupMaxY - ((float)popupAmount / 2) * PopupOffset),
                 newPosition.z
             );
         }
-        if (newPosition.y < 0 || newPosition.y > Screen.height)
+        if (newPosition.y < PopupGroupBottomScreenYOffset || newPosition.y > Screen.height - PopupGroupTopScreenYOffset)
         {
             newPosition = new Vector3(
                 newPosition.x,
-                Mathf.Clamp(newPosition.y, 0, Screen.height), //Mathf.Clamp(newPosition.y, 0, PopupGroupMaxY - ((float)popupAmount / 2) * PopupOffset),
+                Mathf.Clamp(newPosition.y, PopupGroupBottomScreenYOffset, Screen.height - PopupGroupTopScreenYOffset), //Mathf.Clamp(newPosition.y, 0, PopupGroupMaxY - ((float)popupAmount / 2) * PopupOffset),
                 newPosition.z
             );
         }
