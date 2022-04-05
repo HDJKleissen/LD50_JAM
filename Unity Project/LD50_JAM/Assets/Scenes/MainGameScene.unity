@@ -247,7 +247,7 @@ MonoBehaviour:
   BedPopupPrefab: {fileID: 1849772923076884846, guid: ee208b79a01ba3343b88078ff72c4b21, type: 3}
   Popups: []
   PopupGroupYOffset: 210
-  PopupGroupTopScreenYOffset: 190
+  PopupGroupTopScreenYOffset: 175
   PopupGroupBottomScreenYOffset: -15
   PopupGroupSideScreenXOffset: 20
   PopupOffset: -75
@@ -3484,7 +3484,7 @@ MonoBehaviour:
   BedPopupPrefab: {fileID: 1849772923076884846, guid: ee208b79a01ba3343b88078ff72c4b21, type: 3}
   Popups: []
   PopupGroupYOffset: 210
-  PopupGroupTopScreenYOffset: 190
+  PopupGroupTopScreenYOffset: 175
   PopupGroupBottomScreenYOffset: -15
   PopupGroupSideScreenXOffset: 20
   PopupOffset: -75
@@ -12200,7 +12200,7 @@ MonoBehaviour:
   BedPopupPrefab: {fileID: 1849772923076884846, guid: ee208b79a01ba3343b88078ff72c4b21, type: 3}
   Popups: []
   PopupGroupYOffset: 210
-  PopupGroupTopScreenYOffset: 190
+  PopupGroupTopScreenYOffset: 175
   PopupGroupBottomScreenYOffset: -15
   PopupGroupSideScreenXOffset: 20
   PopupOffset: -75
@@ -12319,7 +12319,7 @@ MonoBehaviour:
   BedPopupPrefab: {fileID: 1849772923076884846, guid: ee208b79a01ba3343b88078ff72c4b21, type: 3}
   Popups: []
   PopupGroupYOffset: 210
-  PopupGroupTopScreenYOffset: 190
+  PopupGroupTopScreenYOffset: 175
   PopupGroupBottomScreenYOffset: -15
   PopupGroupSideScreenXOffset: 20
   PopupOffset: -75
@@ -13693,7 +13693,7 @@ MonoBehaviour:
   BedPopupPrefab: {fileID: 1849772923076884846, guid: ee208b79a01ba3343b88078ff72c4b21, type: 3}
   Popups: []
   PopupGroupYOffset: 210
-  PopupGroupTopScreenYOffset: 190
+  PopupGroupTopScreenYOffset: 175
   PopupGroupBottomScreenYOffset: -15
   PopupGroupSideScreenXOffset: 20
   PopupOffset: -75
@@ -13751,7 +13751,7 @@ MonoBehaviour:
   BedPopupPrefab: {fileID: 1849772923076884846, guid: ee208b79a01ba3343b88078ff72c4b21, type: 3}
   Popups: []
   PopupGroupYOffset: 210
-  PopupGroupTopScreenYOffset: 190
+  PopupGroupTopScreenYOffset: 175
   PopupGroupBottomScreenYOffset: -15
   PopupGroupSideScreenXOffset: 20
   PopupOffset: -75
@@ -13809,7 +13809,7 @@ MonoBehaviour:
   BedPopupPrefab: {fileID: 1849772923076884846, guid: ee208b79a01ba3343b88078ff72c4b21, type: 3}
   Popups: []
   PopupGroupYOffset: 210
-  PopupGroupTopScreenYOffset: 190
+  PopupGroupTopScreenYOffset: 175
   PopupGroupBottomScreenYOffset: -15
   PopupGroupSideScreenXOffset: 20
   PopupOffset: -75
@@ -13867,7 +13867,7 @@ MonoBehaviour:
   BedPopupPrefab: {fileID: 1849772923076884846, guid: ee208b79a01ba3343b88078ff72c4b21, type: 3}
   Popups: []
   PopupGroupYOffset: 210
-  PopupGroupTopScreenYOffset: 190
+  PopupGroupTopScreenYOffset: 175
   PopupGroupBottomScreenYOffset: -15
   PopupGroupSideScreenXOffset: 20
   PopupOffset: -75
@@ -14482,7 +14482,7 @@ MonoBehaviour:
   BedPopupPrefab: {fileID: 1849772923076884846, guid: ee208b79a01ba3343b88078ff72c4b21, type: 3}
   Popups: []
   PopupGroupYOffset: 210
-  PopupGroupTopScreenYOffset: 190
+  PopupGroupTopScreenYOffset: 175
   PopupGroupBottomScreenYOffset: -15
   PopupGroupSideScreenXOffset: 20
   PopupOffset: -75
@@ -14606,7 +14606,7 @@ MonoBehaviour:
   BedPopupPrefab: {fileID: 1849772923076884846, guid: ee208b79a01ba3343b88078ff72c4b21, type: 3}
   Popups: []
   PopupGroupYOffset: 210
-  PopupGroupTopScreenYOffset: 190
+  PopupGroupTopScreenYOffset: 175
   PopupGroupBottomScreenYOffset: -15
   PopupGroupSideScreenXOffset: 20
   PopupOffset: -75
@@ -15734,7 +15734,7 @@ MonoBehaviour:
   BedPopupPrefab: {fileID: 1849772923076884846, guid: ee208b79a01ba3343b88078ff72c4b21, type: 3}
   Popups: []
   PopupGroupYOffset: 210
-  PopupGroupTopScreenYOffset: 190
+  PopupGroupTopScreenYOffset: 175
   PopupGroupBottomScreenYOffset: -15
   PopupGroupSideScreenXOffset: 20
   PopupOffset: -75
@@ -16188,8 +16188,8 @@ MonoBehaviour:
   m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 1600, y: 900}
-  m_ScreenMatchMode: 1
+  m_ReferenceResolution: {x: 960, y: 600}
+  m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -16297,7 +16297,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7771429, y: 1}
+    m_SensorSize: {x: 1.6, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -16375,7 +16375,7 @@ MonoBehaviour:
   BedPopupPrefab: {fileID: 1849772923076884846, guid: ee208b79a01ba3343b88078ff72c4b21, type: 3}
   Popups: []
   PopupGroupYOffset: 210
-  PopupGroupTopScreenYOffset: 190
+  PopupGroupTopScreenYOffset: 175
   PopupGroupBottomScreenYOffset: -15
   PopupGroupSideScreenXOffset: 20
   PopupOffset: -75
